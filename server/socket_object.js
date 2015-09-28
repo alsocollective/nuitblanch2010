@@ -73,11 +73,11 @@ var OBJ = function(main_socket) {
 			CALC.add_no_data(out.this_socket, out.pairs);
 			std_winner = CALC.standard_deviation(out, out.pairs, 0.5, 1),
 			agr_winner = CALC.slope_aggression(out, out.pairs, 0.4, 1),
-			sum_winner = CALC.sum(out, out.pairs, 50, 2);
+			sum_winner = CALC.sum(out, out.pairs, 50, 3);
 
 			console.log("\n\nWinner...");
 
-			var winner = CALC.greatest_weighed(out.pairs, out.this_socket.id, 4);
+			var winner = CALC.greatest_weighed(out.pairs, out.this_socket.id, 5);
 			if (winner) {
 				console.log(winner.id);
 			}
