@@ -17,7 +17,6 @@ module.exports = function(grunt) {
 				files: {
 					'http/assets/css/main.min.css': [
 						"http/assets/css/normalize.min.css",
-						// "http/assets/css/style.css",
 						"http/assets/css/main.css",
 					]
 					// 'application/static/css/style.css': ['application/static/css/normalize.min.css', 'application/static/css/jquery.nouislider.css', 'application/static/css/slick.css', 'application/static/css/simple-style.css'],
