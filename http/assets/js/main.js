@@ -1,5 +1,5 @@
 var APP = {
-	// fullscreen: true,
+	fullscreen: false,
 	IP: "192.168.0.101:8000",
 	init: function() {
 		GAME.init();
