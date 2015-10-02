@@ -82,10 +82,6 @@ GAME.phase3 = {
 			"become_element": "human"
 		};
 
-		//console.log(elementTest);
-
-		GAME.phase5.element_swap(elementTest);
-
 		if (!PAIR.D.element) {
 			GAME.phase2.init();
 			return false;
@@ -128,6 +124,7 @@ GAME.phase5 = {
 
 		if (GAME.phase5.first) {
 			GAME.phase5.first = false;
+
 			$("#paired_keep_playing").click(GAME.phase5.keep_playing);
 		}
 	},
