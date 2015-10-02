@@ -10,13 +10,13 @@
 
 
 	<link rel="stylesheet" href="/assets/css/main.min.css"/>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
 
 </head>
 
-<body class="phase4">
+<body class="phase1"> <!-- Append element here -->
 	<div id="wrapper">
-		<div id="phase1">
+		<div id="phase1" class="fadeIn">
 			<!-- preamble -->
 			<!-- 
 				we need text and some dialog 
@@ -27,12 +27,13 @@
 			-->
 			<div class="center_w_table">
 				<div>
-					<h2>Preamble</h2>
-					<p>The text refering to the preamble :D</p>
-					<button id="user_to_phase2">Continue</button>
+
+					<p>You have arrived in the era of the Chthuluscene.</p>
+					<p>You are a consequential, terraforming force on our on-going, re-composing, in-flux planetary spaceship Earth.</p>
+					<button id="user_to_phase2">Launch</button>
 				</div>
 			</div>
-		</div><div id="phase2">
+		</div><div id="phase2" class="fadeIn">
 			<!-- set player type -->
 			<!-- 
 				give the player a randomized
@@ -42,17 +43,19 @@
 
 				If they have a cookie we skip this step.
 			-->
-			<div class="center_w_table">
+			<div class="center_w_table bounds_break">
 				<div>
-					<ul id="user_choose_type">
-						<li><a href="#human" alt="human">human</a></li><li>
-						<a href="#wave" alt="wave">wave</a></li><li>
-						<a href="#water" alt="water">water</a></li><li>
-						<a href="#celluar" alt="celluar">celluar</a></li>
+					<ul id="user_choose_type" class="element_choice">
+						<li><a href="#human" alt="human"><img src="/assets/img/homosapiens.png"></a></li><li><a href="#wave" alt="wave"><img src="/assets/img/homosapiens.png"></a></li><li><a href="#water" alt="water"><img src="/assets/img/homosapiens.png"></a></li><li><a href="#cellular" alt="cellular"><img src="/assets/img/homosapiens.png"></a></li> 
 					</ul>
+
+					<div id="background_element_color" class="container">
+    					<div class="child"></div>
+					</div>
+
 				</div>
 			</div>
-		</div><div id="phase3">
+		</div><div id="phase3" class="fadeIn">
 			<!-- explain what you are -->
 			<!-- 
 				Explain who they are playing as
@@ -61,13 +64,30 @@
 				this is the main focus of the page
 			 -->
 			<div class="center_w_table">
+
+				<!-- 
+				Class becomes either no_pair or no_time_pair. 
+				This is what we can use to notify users.
+				-->
+
+				<div id="user_errors" class=""></div>
+
 				<div>
-					<div class="user_icon"></div>
-					<button id="pairing_button">PAIR</button>
+					<div class="pairing_container">
+
+						<button id="pairing_button">Mate</button>
+
+						<div class="pairing_child">
+							<div id="trying_to_pair" class=""></div>
+							<!-- <div class="pairing2"></div>
+							<div class="pairing3"></div> -->
+						</div>
+					</div>
 				</div>
 			</div>
+			
 			<div class="error">
-				you can try to send again, no one click close in time to you
+				<!-- you can try to send again, no one click close in time to you -->
 			</div>
 		</div><div id="phase4">
 			<!-- being pairing state -->
@@ -77,9 +97,23 @@
 			 -->
 			<div class="center_w_table">
 				<div>
-					<div class="center_icon_change"></div>
+
+					<div class="pairing_container">
+						<!-- <div class="user_icon"></div> -->
+						<!-- <div>
+							<button id="pairing_button">Mate</button>
+						</div> -->
+						<button id="pairing_button">Mating...</button>
+
+						<div class="pairing_child">
+							<div id="trying_to_pair" class="pairing"></div>
+							<!-- <div class="pairing2"></div>
+							<div class="pairing3"></div> -->
+						</div>
+					</div>
 				</div>
 			</div>
+
 		</div><div id="phase5">
 			<!-- visaul outcome -->
 			<!-- 
@@ -94,8 +128,12 @@
 					<button id="paired_keep_playing">keep playing</button>
 				</div>
 			</div>
+
 		</div>
+
+		<!-- <div id="background_container" class="paired cell_general" style="background-image: url(/assets/img/background/cellular/cellular_general/Cell_00000.jpg);"></div> -->
 	</div>
+
 	<div id="jsmessage"></div>
 	<script type="text/javascript" src="/assets/js/lib/jquery-1.9.0.js"></script>
 	<script type="text/javascript" src="/assets/js/lib/js.cookie.js"></script>

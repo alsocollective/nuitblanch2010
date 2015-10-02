@@ -5,16 +5,50 @@ html,body{
 	min-height: 100vh;
 	width: 100%;
 	// overflow: hidden;
-	font-family: sans-serif;
+	//-webkit-touch-callout: none;
+
 	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 	text-align: center;
 	background-color: $black;
+	//background-color: transparent;
 	color: $white;
+
+	@include vendorize('user-select','none');
+	@include vendorize('font-smoothing','antialiased');
+
+	//font-family: 'Lekton', sans-serif;
+	font-family: 'Lato', sans-serif;
+
+	font-weight: 100;
+    font-size: 1.25rem;
+}
+
+//Vendorize NOT SURE IF THIS WORKS MIGHT NEED TO ONLY BE APPLIED TO ANIMATIONS
+#wrapper {
+   -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+
+h1,h2,h3,h4,h5{
+}
+
+p {
+	width: 80%;
+    margin: 0 auto 1em auto;
 }
 
 ul,li{
@@ -26,6 +60,28 @@ ul,li{
 a{
 	color: inherit;
 }
+//Locally hosted google fonts. Could also be vendorized.
+
+/*
+@font-face {
+  font-family: 'Lekton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lekton'), local('Lekton-Regular'), url(/assets/fonts/lekton-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lekton';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lekton-Bold'), url(/assets/fonts/lekton-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lekton';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lekton-Italic'), url(/assets/fonts/lekton-italic.woff) format('woff');
+}
+*/
 
 @for $i from 1 through 5 {
 	#phase#{$i}{
@@ -40,24 +96,21 @@ a{
 
 button{
 	background-color: $black;
-	border: 2px solid $white;
-	width: 5rem;
-	height: 5rem;
+	border: 1px solid $black;
+	width: 8rem;
+	height: 8rem;
 	border-radius: 100%;
 	font-size: inherit;
 	color: inherit;
 	font-family: inherit;
 	font-weight: inherit;
+    box-shadow: 0px 0px 55px #fff;
 
 	&:active,&:focus{
-		background-color: $white;
 		color: $black;
 		outline:none;
+		background-color: transparent;
 	}
-}
-
-h1,h2,h3{
-	text-transform: uppercase;
 }
 
 .center_w_table{
@@ -72,10 +125,43 @@ h1,h2,h3{
 
 
 
+//elements Phase 2
+.container { 
+	width: 0px;
+    margin: 0 auto 1rem;
+    position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	border-radius: 50%;
+  	transform: translate(-50%, -50%);
+  	-webkit-transform: translate(-50%, -50%);
+}
 
+.container .child {
+    width: 100%;
+    padding-top: 100%;
+    //background-color: #f0f;
+    border-radius: 50%;
+}
 
+.open {
+	width: 220%;
+    //transition: width 0.6s;
+    @include transition(width, 10.5s, ease-out);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
 
+.element_choice {
+	img {
+		width: 50px;
+	}
+}
 
+#phase2 {
+	overflow: hidden;
+	height: 100vh;
+}
 
 #jsmessage{
 	position: fixed;
@@ -92,11 +178,12 @@ h1,h2,h3{
 		max-width: 400px;
 		margin: 0 auto;
 		li{
-			width: 50%;
+			//width: 50%;
 			display: inline-table;
+			padding: 2rem;
 			a{
 				display: table-cell;
-				padding: 3rem;
+				padding: 0px;
 				vertical-align: middle;
 			}
 		}
@@ -130,6 +217,21 @@ h1,h2,h3{
 	}
 
 
+//Elements
+.human {
+	background-color: #a63534;
+}
 
+.wave {
+	background-color: #ddcd47;
+}
+
+.cellular {
+	background-color: #4db140;
+}
+
+.water {
+	background-color: #61abce;
+}
 
 

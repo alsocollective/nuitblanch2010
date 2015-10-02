@@ -47,13 +47,17 @@ GAME.phase2 = {
 	set_type: function(event) {
 		event.preventDefault();
 		Cookies.set('element', this.href.split("#").pop());
+		$("#background_element_color").addClass(this.href.split("#").pop());
 		GAME.phase2.next_phase(event);
 		return false;
 	},
 	next_phase: function(event) {
 		event.preventDefault();
-		GAME.phase3.init();
-		return false;
+		$("#background_element_color").addClass("open");
+		setInterval(function() {
+			GAME.phase3.init();
+			return false;
+		}, 200000);
 	}
 }
 
@@ -68,9 +72,11 @@ GAME.phase3 = {
 		}
 		if (!error) {
 			error = "";
+		} else {
+			$("#user_errors").removeClass().addClass(error);
 		}
 		APP.pr(error);
-		$(document.body).removeClass().addClass("phase3 " + error);
+		$(document.body).removeClass().addClass("phase3 " + PAIR.D.element + error);
 		//Start the pairing process
 	}
 }
@@ -81,7 +87,7 @@ GAME.phase3 = {
 
 GAME.phase4 = {
 	init: function() {
-		$(document.body).removeClass().addClass("phase4 ");
+		$(document.body).removeClass().addClass("phase4 " + PAIR.D.element);
 	}
 }
 

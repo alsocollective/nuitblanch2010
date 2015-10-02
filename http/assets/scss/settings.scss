@@ -83,21 +83,34 @@ $min-width:500px;
 	}
 }
 
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+//Fixed this for whatever version my SASS is. #{$animation-name} Use the curly braces.
 @mixin keyframes($animation-name) {
-	@-webkit-keyframes $animation-name {
+	@-webkit-keyframes #{$animation-name} {
 		@content;
 	}
-	@-moz-keyframes $animation-name {
+	@-moz-keyframes #{$animation-name} {
 		@content;
 	}
-	@keyframes $animation-name {
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
 		@content;
 	}
 }
 
-@mixin animation($str) {
-	-webkit-animation: #{$str};
-}
+
 
 @mixin imageizer($name) {
 

@@ -103,7 +103,7 @@ PAIR.WAIT.in_tap_queue_holder = null
 PAIR.WAIT.in_tap_queue = function() {
 	console.log("cancle queue")
 	REC.stop_failed();
-	GAME.phase3.init("not tap close in time");
+	GAME.phase3.init(" no_time_pair");
 };
 
 
@@ -129,7 +129,7 @@ PAIR.OUT.finished_recording = function(data) {
 // go back to phase 3 with error message of no matting
 PAIR.WAIT.in_data_queue_holder = null
 PAIR.WAIT.in_data_queue = function() {
-	GAME.phase3.init("no one paired with you");
+	GAME.phase3.init(" no_pair");
 };
 
 // we paired
