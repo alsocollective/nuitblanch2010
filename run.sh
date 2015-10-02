@@ -1,6 +1,7 @@
 #! /bin/sh
-PATH=${PATH}:/home/bohdan/.nvm/v0.10.36/bin
+PATH=${PATH}:/home/also/.nvm/v0.10.40/bin
 
 forever stopall
 forever list
-forever start /srv/www/demo.bohdananderson.com/main.js
+#forever start /srv/node/demo/main.js
+node /srv/node/demo/main.js
