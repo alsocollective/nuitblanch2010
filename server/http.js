@@ -7,6 +7,8 @@ var http = {
 		http.http = require('http');
 
 		http.app = http.connect().use(function(req, res, next) {
+			next();
+			return false;
 			if (req.headers.host != 'www.chthuluscene.org') {
 				console.log("need to redirect");
 				res.writeHead(301, {
