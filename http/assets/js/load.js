@@ -27,7 +27,6 @@ var LOAD = {
 
 		image.onload = function() {
 			var current_image = LOAD.images.shift();
-			//console.log(current_image);
 			if (current_image) {
 				this.src = current_image;
 			}

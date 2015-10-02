@@ -82,22 +82,6 @@ GAME.phase3 = {
 			"become_element": "human"
 		};
 
-		//console.log(elementTest);
-		//GAME.phase5.element_swap(elementTest);
-
-		var count = 0;
-
-		setInterval(function() {
-			count++;
-
-			if (count >= 11) {
-				count = 0;
-			}
-
-			$("#background_container").css('background-image', 'url(' + "/assets/img/background/cellular/cellular_general/Cell_" + count + ".jpg" + ')');
-
-		}, 250);
-
 		if (!PAIR.D.element) {
 			GAME.phase2.init();
 			return false;
