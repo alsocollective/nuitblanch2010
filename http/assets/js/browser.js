@@ -18,11 +18,5 @@ var BROWSER = {
 
 		}
 		alert(agent);
-		// location.reload();
 	}
-	// if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
-	//     (strpos($userAgent, 'mozilla/') !== false) &&
-	//     (strpos($userAgent, 'applewebkit/') !== false) &&
-	//     (strpos($userAgent, 'mobile/') !== false) &&
-	//     (strpos($userAgent, 'safari') === false))
 }
