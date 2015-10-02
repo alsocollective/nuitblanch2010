@@ -55,7 +55,7 @@ GAME.phase2 = {
 
 		$("#background_container").addClass(userElement);
 
-		//LOAD.init(userElement);
+		LOAD.init(String(userElement));
 
 		GAME.phase2.next_phase(event);
 		return false;
