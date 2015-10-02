@@ -10,13 +10,18 @@ var BROWSER = {
 			(agent.indexOf("mobile/") !== -1) &&
 			(agent.indexOf("safari") === -1)) {
 
-			alert("apple Captive Network Assistant")
+			BROWSER.make_captive_portal_active();
+			// alert("apple Captive Network Assistant")
 		} else if (agent.indexOf("wv") > 0) {
-			alert("in an android wv...")
+			BROWSER.make_captive_portal_active();
+			// alert("in an android wv...")
 		} else {
 			console.log("not an appce captive network...")
 
 		}
-		alert(agent);
+		// alert(agent);
+	},
+	make_captive_portal_active: function() {
+		$(document.body).addClass("captive_portal_active")
 	}
 }
