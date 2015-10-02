@@ -16,6 +16,9 @@ GAME.phase1 = {
 	first: true,
 	init: function() {
 		$(document.body).removeClass().addClass("phase1");
+
+		LOAD.init("wave");
+
 		if (GAME.phase1.first) {
 			$("#user_to_phase2").click(GAME.phase1.next_phase);
 			GAME.phase1.first = false;
@@ -46,18 +49,25 @@ GAME.phase2 = {
 	},
 	set_type: function(event) {
 		event.preventDefault();
-		Cookies.set('element', this.href.split("#").pop());
-		$("#background_element_color").addClass(this.href.split("#").pop());
+		var userElement = this.href.split("#").pop();
+		Cookies.set('element', userElement);
+		$("#background_element_color").addClass(userElement);
+
+		$("#background_container").addClass(userElement);
+
+		//LOAD.init(userElement);
+
 		GAME.phase2.next_phase(event);
 		return false;
 	},
 	next_phase: function(event) {
 		event.preventDefault();
 		$("#background_element_color").addClass("open");
+
 		setInterval(function() {
-			GAME.phase3.init();
+			GAME.phase3.init(); //Please clear this interval!!!!!
 			return false;
-		}, 200000);
+		}, 2500);
 	}
 }
 
@@ -66,6 +76,7 @@ GAME.phase3 = {
 	init: function(error) {
 		PAIR.D.element = Cookies.get('element');
 		PAIR.init();
+
 		if (!PAIR.D.element) {
 			GAME.phase2.init();
 			return false;

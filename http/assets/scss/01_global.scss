@@ -147,7 +147,7 @@ button{
 .open {
 	width: 220%;
     //transition: width 0.6s;
-    @include transition(width, 10.5s, ease-out);
+    @include transition(width, 2.25s, ease-out);
     transform: translate(-50%,-50%);
     border-radius: 50%;
 }
@@ -216,22 +216,23 @@ button{
 		background-color: #f0c;
 	}
 
-
 //Elements
-.human {
+#background_element_color.human {
 	background-color: #a63534;
 }
 
-.wave {
+#background_element_color.wave {
 	background-color: #ddcd47;
 }
 
-.cellular {
+#background_element_color.cellular {
 	background-color: #4db140;
 }
 
-.water {
+#background_element_color.water {
 	background-color: #61abce;
 }
+
+
 
 
