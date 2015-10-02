@@ -25,7 +25,7 @@ var http = {
 	},
 	start: function() {
 		// http.server.listen(80, "158.69.10.32");
-		http.server.listen(80); //local
+		http.server.listen(8000); //local
 		console.log("http server starting on port 80")
 	}
 }
