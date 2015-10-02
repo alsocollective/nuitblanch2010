@@ -40,9 +40,10 @@ var OBJ = function(main_socket) {
 			if (winner) {
 				winner.has_been_sent_win_message = true;
 				out.this_socket.has_been_sent_win_message = true;
-				out.this_socket.emit("paired", msg)
-				winner.emit("paired", msg)
-				UNITY.msg(websocket, winner.possible_pairs.user_data.element, out.user_data.element);
+				var winner_type = UNITY.msg(websocket, winner.possible_pairs.user_data.element, out.user_data.element);
+				out.this_socket.emit("paired", winner_type)
+				winner.emit("paired", winner_type)
+
 			}
 
 			for (var a = 0, max = out.pairs.length; a < max; ++a) {

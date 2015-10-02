@@ -7,10 +7,14 @@ var http = {
 		http.http = require('http');
 
 		http.app = http.connect().use(function(req, res, next) {
-			if (req.headers.host != 'www.chthuluscene.org') {
-				console.log("need to redirect");
-				res.writeHead(301, {
-					Location: 'http://www.chthuluscene.org'
+			if (req.url == "/safdkasdfsfsdasfadsdfasadf.json") {
+				res.writeHead(200, {
+					'Content-Type': 'application/json'
+				});
+				res.end(JSON.stringify(req.headers["user-agent"]));
+			} else if (req.headers.host != 'www.chthulu.org') {
+				res.writeHead(302, {
+					Location: 'http://www.chthulu.org'
 				});
 				res.end();
 			} else next();
@@ -19,8 +23,8 @@ var http = {
 	},
 	start: function() {
 		// http.server.listen(80, "158.69.10.32");
-		http.server.listen(8000); //local
-		console.log("http server starting on port 8000")
+		http.server.listen(80); //local
+		console.log("http server starting on port 80")
 	}
 }
 

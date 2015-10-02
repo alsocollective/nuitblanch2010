@@ -33,7 +33,7 @@ var write_data = function(data, time, id, headers) {
 	if (!fs.existsSync("data/" + time)) {
 		fs.mkdirSync("data/" + time);
 	}
-	fs.writeFile("data/" + time + "/" + String(id), headers + "\n" + write_data_parse(data), function(err) {
+	fs.writeFile(("data/" + time + "/" + String(id)).replace(/\s/g, ""), headers + "\n" + write_data_parse(data), function(err) {
 		if (err) return console.log(err);
 	});
 }
