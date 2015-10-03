@@ -7,13 +7,13 @@ var UNITY = {}
 UNITY.map_combination = function(t1, t2) {
 	if ((t1 == "human" && t2 == "wave") || (t1 == "wave" && t2 == "human")) {
 		return "nuke"
-	} else if ((t1 == "human" && t2 == "celluar") || (t1 == "celluar" && t2 == "human")) {
+	} else if ((t1 == "human" && t2 == "cellular") || (t1 == "cellular" && t2 == "human")) {
 		return "farm"
 	} else if ((t1 == "human" && t2 == "human") || (t1 == "human" && t2 == "human")) {
 		return "city"
 	} else if ((t1 == "human" && t2 == "water") || (t1 == "water" && t2 == "human")) {
 		return "oilspill"
-	} else if ((t1 == "wave" && t2 == "celluar") || (t1 == "celluar" && t2 == "wave")) {
+	} else if ((t1 == "wave" && t2 == "cellular") || (t1 == "cellular" && t2 == "wave")) {
 		return "birds"
 	} else if ((t1 == "wave" && t2 == "wave") || (t1 == "wave" && t2 == "wave")) {
 		return "volcanoe"
@@ -21,9 +21,9 @@ UNITY.map_combination = function(t1, t2) {
 		return "huricane"
 	} else if ((t1 == "water" && t2 == "water") || (t1 == "water" && t2 == "water")) {
 		return "monsoon"
-	} else if ((t1 == "water" && t2 == "celluar") || (t1 == "celluar" && t2 == "water")) {
+	} else if ((t1 == "water" && t2 == "cellular") || (t1 == "cellular" && t2 == "water")) {
 		return "trees"
-	} else if ((t1 == "celluar" && t2 == "celluar") || (t1 == "celluar" && t2 == "celluar")) {
+	} else if ((t1 == "cellular" && t2 == "cellular") || (t1 == "cellular" && t2 == "cellular")) {
 		return "greenhouse"
 	}
 	return "some unknown combo..."
