@@ -94,6 +94,7 @@ PAIR.OUT.joining_queue = function(event) {
 PAIR.IN.joined_queue = function(data) {
 	console.log("joined queue, wait " + data + " before exiting");
 	PAIR.D.wait_time = data;
+	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
 	PAIR.WAIT.in_tap_queue_holder = window.setTimeout(PAIR.WAIT.in_tap_queue, data * 2)
 };
 
@@ -123,7 +124,8 @@ PAIR.OUT.finished_recording = function(data) {
 	console.log("sending this data...")
 	// console.log(data)
 	APP.print_data(data);
-	PAIR.socket.emit("recording finished", data)
+	PAIR.socket.emit("recording finished", data);
+	clearTimeout(PAIR.WAIT.in_data_queue_holder);
 	PAIR.WAIT.in_data_queue_holder = window.setTimeout(PAIR.WAIT.in_data_queue, PAIR.D.wait_time * 3);
 };
 

@@ -41,7 +41,9 @@ var OBJ = function(main_socket) {
 				winner.has_been_sent_win_message = true;
 				out.this_socket.has_been_sent_win_message = true;
 				var winner_type = UNITY.msg(websocket, winner.possible_pairs.user_data.element, out.user_data.element);
+				winner_type["become_element"] = winner.possible_pairs.user_data.element
 				out.this_socket.emit("paired", winner_type)
+				winner_type["become_element"] = out.user_data.element
 				winner.emit("paired", winner_type)
 
 			}

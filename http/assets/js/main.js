@@ -3,7 +3,7 @@ var APP = {
 	IP: "192.168.0.101:8000",
 	//IP: "10.0.1.7:8000",
 	init: function() {
-		BROWSER.init(true);
+		BROWSER.init(false);
 		GAME.init();
 		LOAD.init();
 	},
