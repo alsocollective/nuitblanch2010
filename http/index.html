@@ -10,11 +10,10 @@
 
 
 	<link rel="stylesheet" href="/assets/css/main.min.css"/>
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
 
 </head>
 
-<body class="phase5"> <!-- Append element here -->
+<body class="phase2"> <!-- Append element here -->
 	<div id="wrapper">
 
 		<div id="user_errors" class=""></div> <!-- Modal -->
@@ -49,7 +48,7 @@
 			<div class="center_w_table bounds_break">
 				<div>
 					<ul id="user_choose_type" class="element_choice">
-						<li><a href="#human" alt="human"><img src="/assets/img/elements/human.png"></a></li><li><a href="#wave" alt="wave"><img src="/assets/img/elements/water.png"></a></li><li><a href="#water" alt="water"><img src="/assets/img/elements/cellular.png"></a></li><li><a href="#cellular" alt="cellular"><img src="/assets/img/elements/waveform.png"></a></li>
+						<li><a href="#human" alt="human"><img src="/assets/img/elements/human.png"></a></li><li><a href="#wave" alt="wave"><img src="/assets/img/elements/wave.png"></a></li><li><a href="#water" alt="water"><img src="/assets/img/elements/water.png"></a></li><li><a href="#cellular" alt="cellular"><img src="/assets/img/elements/cellular.png"></a></li>
 					</ul>
 
 					<div id="background_element_color" class="container">
@@ -66,13 +65,7 @@
 				There is a button for them to start pairing...
 				this is the main focus of the page
 			 -->
-			<div class="center_w_table">
-
-				<!-- 
-				Class becomes either no_pair or no_time_pair. 
-				This is what we can use to notify users.
-				-->
-
+			<!-- <div class="center_w_table">
 				<div>
 					<div class="pairing_container">
 
@@ -80,12 +73,23 @@
 
 						<div class="pairing_child">
 							<div id="trying_to_pair" class=""></div>
-							<!-- <div class="pairing2"></div>
-							<div class="pairing3"></div> -->
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+			<div class="center_w_table">
+				<div>
+					<div id="pair_ui_container">
+						<div id="pair_ui"><button></button></div><div class="pairing_child">
+							<div id="trying_to_pair" class="pairing_ring1"></div>
+							<div id="trying_to_pair" class="pairing_ring2"></div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+
 			
 			<div class="error">
 				<!-- you can try to send again, no one click close in time to you -->
