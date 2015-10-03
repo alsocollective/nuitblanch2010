@@ -7,8 +7,8 @@ var http = {
 		http.http = require('http');
 
 		http.app = http.connect().use(function(req, res, next) {
-			next();
-			return false;
+			// next();
+			// return false;
 			if (req.url == "/safdkasdfsfsdasfadsdfasadf.json") {
 				res.writeHead(200, {
 					'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ var http = {
 	},
 	start: function() {
 		// http.server.listen(80, "158.69.10.32");
-		http.server.listen(8000); //local
+		http.server.listen(80); //local
 		console.log("http server starting on port 80")
 	}
 }
