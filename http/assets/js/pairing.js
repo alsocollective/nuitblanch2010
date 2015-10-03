@@ -24,7 +24,7 @@ var PAIR = {
 			$("#pairing_button").click(PAIR.OUT.joining_queue);
 
 		}
-		$(".pairing_ring").removeClass(" match_found");
+		$(".pairing_ring").removeClass("match_found");
 	},
 	IN: {},
 	OUT: {},
@@ -120,7 +120,7 @@ PAIR.WAIT.in_tap_queue = function() {
 PAIR.IN.continue_to_record = function(data) {
 	console.log("continue to record");
 	$(document.body).addClass("found_potential_pair");
-	$(".pairing_ring").addClass(" match_found");
+	$(".pairing_ring").addClass("match_found");
 	APP.pr("potential " + data);
 	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
 };

@@ -78,11 +78,15 @@ html,body{
 
 	> div {
 		z-index: 2;
-		position: relative;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		height: 100vh;
 	}
 	
 	#background_containers{
-		position: static;
+		position: relative;
 		z-index: 1;
 	}
 	#background_container_a, #background_container_b {
