@@ -50,7 +50,7 @@ GAME.phase2 = {
 		var userElement = this.href.split("#").pop();
 		Cookies.set('element', userElement);
 		$("#background_element_color").addClass(userElement);
-
+		$("#wrapper").addClass("fade_out_in");
 		GAME.phase2.next_phase(event);
 		return false;
 	},
@@ -74,11 +74,6 @@ GAME.phase3 = {
 	init: function(error) {
 		PAIR.D.element = Cookies.get('element');
 		PAIR.init();
-
-		var elementTest = {
-			"outcome": "nuke",
-			"become_element": "human"
-		};
 
 		if (!PAIR.D.element) {
 			GAME.phase2.init();
