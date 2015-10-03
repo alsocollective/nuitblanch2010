@@ -25,21 +25,18 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		// uglify: {
-		// 	js: {
-		// 		files: {
-		// 			// 'application/static/js/main.min.js': [
-		// 			// 	'application/static/js/lib/jquery.min.js',
-		// 			// 	'application/static/js/lib/jquery.nouislider.full.min.js',
-		// 			// 	'application/static/js/lib/jquery-migrate-1.2.1.min.js',
-		// 			// 	'application/static/js/lib/slick.min.js',
-		// 			// 	'application/static/js/lib/modernizr.js',
-		// 			// 	'application/static/js/lib/waypoints.min.js',
-		// 			// 	'application/static/js/main.js',
-		// 			// ]
-		// 		}
-		// 	}
-		// },
+		uglify: {
+			js: {
+				files: {
+					'http/assets/main.min.js': [
+						'http/assets/js/lib/jquery-1.9.0.js',
+						'http/assets/js/lib/screenfull.min.js',
+						'http/assets/js/lib/js.cookie.js',
+						'http/assets/js/*.js',
+					]
+				}
+			}
+		},
 		nodemon: {
 			script: 'main.js',
 			options: {
@@ -74,10 +71,10 @@ module.exports = function(grunt) {
 			// 	files: ['main.js', 'server/*.js'],
 			// 	tasks: ['nodemon']
 			// }
-			// js: {
-			// 	// files: 'application/static/js/main.js',
-			// 	// tasks: ['uglify']
-			// }
+			js: {
+				files: 'http/assets/js/*.js',
+				tasks: ['uglify']
+			}
 		}
 	});
 

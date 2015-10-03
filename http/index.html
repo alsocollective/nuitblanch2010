@@ -3,12 +3,11 @@
 <head>
 	<title>Demos</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0; minimal-ui=1;" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="mobile-web-app-capable" content="yes">
-
-
+	<meta name="theme-color" content="#000">
 	<link rel="stylesheet" href="/assets/css/main.min.css"/>
 
 </head>
@@ -162,10 +161,12 @@
 	</div>
 
 	<div id="jsmessage"></div>
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<!-- 
 	<script type="text/javascript" src="/assets/js/lib/jquery-1.9.0.js"></script>
 	<script type="text/javascript" src="/assets/js/lib/js.cookie.js"></script>
 	<script type="text/javascript" src="/assets/js/lib/screenfull.min.js"></script>
-	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="/assets/js/main.js"></script>
 	<script type="text/javascript" src="/assets/js/game.js"></script>
 	<script type="text/javascript" src="/assets/js/record.js"></script>
@@ -173,6 +174,8 @@
 	<script type="text/javascript" src="/assets/js/pairing.js"></script>
 	<script type="text/javascript" src="/assets/js/browser.js"></script>
 	<script type="text/javascript" src="/assets/js/load.js"></script>
+ -->
+ 	<script type="text/javascript" src="/assets/main.min.js"></script>
 	<script type="text/javascript">
 		APP.init();
 		window.addEventListener("load", function(){
