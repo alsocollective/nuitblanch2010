@@ -46,12 +46,36 @@ module.exports = function(grunt) {
 				ignore: ['http/**']
 			}
 		},
-
+		responsive_images: {
+			options: {
+				engine: 'gm',
+				newFilesOnly: true,
+				sizes: [{
+					name: 'small',
+					width: 640
+				}, {
+					name: 'medium',
+					width: 1024
+				}, {
+					name: 'large',
+					width: 1280
+				}],
+			},
+			target: {
+				files: [{
+					expand: true,
+					src: ['**.{jpg,gif,png}'],
+					cwd: 'http/img_original/img/*/*',
+					dest: 'http/assets/img/'
+				}]
+			}
+		},
 		watch: {
 			css: {
 				files: ['**/*.scss'],
-				tasks: ['sass', 'cssmin'] //
+				tasks: ['sass', 'cssmin']
 			},
+
 			// node: {
 			// 	files: ['main.js', 'server/*.js'],
 			// 	tasks: ['nodemon']
@@ -62,6 +86,8 @@ module.exports = function(grunt) {
 			// }
 		}
 	});
+
+	grunt.loadNpmTasks('grunt-responsive-images');
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -69,4 +95,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.registerTask('default', ['watch']);
 	grunt.registerTask('node', ['nodemon'])
+	grunt.registerTask('img', ['responsive_images'])
 };

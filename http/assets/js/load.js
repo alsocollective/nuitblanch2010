@@ -36,7 +36,7 @@ var LOAD = {
 			}
 		}
 	},
-	interval_speed: 150,
+	interval_speed: 100,
 	user_type: null,
 	background_itterator: null,
 	bk1: null,
@@ -67,33 +67,39 @@ var LOAD = {
 		LOAD.user_type = type;
 		if (LOAD.background_itterator == null) {
 			LOAD.background_itterator = setInterval(LOAD.background_loop, LOAD.interval_speed);
-			LOAD.bk1 = $("#background_container_a");
-			LOAD.bk2 = $("#background_container_b");
+			LOAD.bk1 = $("#background_container_a img");
+			LOAD.bk2 = $("#background_container_b img");
 		} else {
 			console.log("has already been set");
 		}
 	},
 	background_loop: function() {
 		if (!LOAD.special) {
-			if (LOAD.bk1.hasClass("active")) {
-				LOAD.bk2.addClass("active");
-				LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
-			} else {
-				LOAD.bk1.addClass("active")
-				LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
-			}
+			// if (LOAD.bk1.hasClass("active")) {
+			// LOAD.bk2.addClass("active");
+			// LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
+			// LOAD.bk2.addClass("active");
+			LOAD.bk2.attr("src", 'assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg');
+			// } else {
+			// LOAD.bk1.addClass("active")
+			// LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
+			// LOAD.bk1.addClass("active")
+			// LOAD.bk2.removeClass("active").attr("src", 'assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg');
+
+			// }
 			LOAD.count += 1;
 			if (LOAD.count > LOAD.background_lengths[LOAD.user_type] - 1) {
 				LOAD.count = 0;
 			}
 		} else {
-			if (LOAD.bk1.hasClass("active")) {
-				LOAD.bk2.addClass("active");
-				LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg")');
-			} else {
-				LOAD.bk1.addClass("active")
-				LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg")');
-			}
+			LOAD.bk2.attr("src", 'assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg');
+			// if (LOAD.bk1.hasClass("active")) {
+			// 	LOAD.bk2.addClass("active");
+			// 	LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg")');
+			// } else {
+			// 	LOAD.bk1.addClass("active")
+			// 	LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg")');
+			// }
 			LOAD.count += 1;
 
 

@@ -80,6 +80,10 @@ answer wait > times out
 // we go to phase 4
 // we bein recording the data
 PAIR.OUT.joining_queue = function(event) {
+	if ($(".phase4").length) {
+		event.preventDefault();
+		return false;
+	}
 	console.log("joining queue");
 	APP.pr("tapped!");
 	PAIR.socket.emit("join queue", "PAIR.D")

@@ -20,13 +20,21 @@ var http = {
 				});
 				res.end();
 			} else next();
-		}).use(http.staticServer(__dirname + "/../http"));
+		}).use(http.staticServer(__dirname + "/../http", {
+			maxAge: '1d',
+			setHeaders: http.set_custom_cache_control
+		}));
 		http.server = http.http.createServer(http.app);
 	},
 	start: function() {
 		// http.server.listen(80, "158.69.10.32");
 		http.server.listen(8000); //local
 		console.log("http server starting on port 80")
+	},
+	set_custom_cache_control: function(res, path) {
+		if (http.staticServer.mime.lookup(path) != "image/jpeg" && http.staticServer.mime.lookup(path) != "image/png") {
+			res.setHeader('Cache-Control', 'public, max-age=0')
+		}
 	}
 }
 

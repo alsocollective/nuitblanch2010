@@ -39,8 +39,8 @@ html, body {
   -ms-user-select: none;
   user-select: none;
   text-align: center;
-  background-color: #222;
-  color: #fff;
+  background-color: #222222;
+  color: white;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -229,7 +229,7 @@ button, .center_icon_change {
 .center_icon_change {
   margin: 0 auto; }
   .center_icon_change:active, .center_icon_change:focus {
-    background-color: #222; }
+    background-color: #222222; }
 
 .tracking_motion {
   background-color: #f0c; }
@@ -313,11 +313,6 @@ button, .center_icon_change {
   width: 25%; }
 
 #background_container_a, #background_container_b {
-  background: no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   width: 100%;
   height: 100%;
   height: 100vh;
@@ -327,30 +322,38 @@ button, .center_icon_change {
   z-index: -2; }
   #background_container_a.active, #background_container_b.active {
     z-index: -1; }
+  #background_container_a img, #background_container_b img {
+    width: 100%;
+    height: 100%; }
 
 @-webkit-keyframes fadein {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-moz-keyframes fadein {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-ms-keyframes fadein {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-o-keyframes fadein {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @keyframes fadein {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-webkit-keyframes radiate {
@@ -358,6 +361,7 @@ button, .center_icon_change {
     width: 8rem;
     height: 8rem;
     opacity: 1; }
+
   100% {
     width: 300px;
     height: 300px;
@@ -367,6 +371,7 @@ button, .center_icon_change {
     width: 8rem;
     height: 8rem;
     opacity: 1; }
+
   100% {
     width: 300px;
     height: 300px;
@@ -376,6 +381,7 @@ button, .center_icon_change {
     width: 8rem;
     height: 8rem;
     opacity: 1; }
+
   100% {
     width: 300px;
     height: 300px;
@@ -385,6 +391,7 @@ button, .center_icon_change {
     width: 8rem;
     height: 8rem;
     opacity: 1; }
+
   100% {
     width: 300px;
     height: 300px;
@@ -394,6 +401,7 @@ button, .center_icon_change {
     width: 8rem;
     height: 8rem;
     opacity: 1; }
+
   100% {
     width: 300px;
     height: 300px;
@@ -402,6 +410,7 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
+
   100% {
     opacity: 0;
     display: none; } }
@@ -409,6 +418,7 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
+
   100% {
     opacity: 0;
     display: none; } }
@@ -416,6 +426,7 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
+
   100% {
     opacity: 0;
     display: none; } }
@@ -423,6 +434,7 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
+
   100% {
     opacity: 0;
     display: none; } }
@@ -430,52 +442,68 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
+
   100% {
     opacity: 0;
     display: none; } }
 @-webkit-keyframes fade_out_in {
   0% {
     opacity: 1; }
+
   40% {
     opacity: 0; }
+
   60% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-moz-keyframes fade_out_in {
   0% {
     opacity: 1; }
+
   40% {
     opacity: 0; }
+
   60% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-ms-keyframes fade_out_in {
   0% {
     opacity: 1; }
+
   40% {
     opacity: 0; }
+
   60% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-o-keyframes fade_out_in {
   0% {
     opacity: 1; }
+
   40% {
     opacity: 0; }
+
   60% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @keyframes fade_out_in {
   0% {
     opacity: 1; }
+
   40% {
     opacity: 0; }
+
   60% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 .fade_out_in {
@@ -520,7 +548,7 @@ button, .center_icon_change {
   width: 100%;
   height: 100%;
   height: 100vh;
-  background-color: #222;
+  background-color: #222222;
   text-align: center;
   font-weight: normal;
   font-size: 1rem; }
@@ -531,5 +559,3 @@ button, .center_icon_change {
 
 .captive_portal_active #captive_portal {
   display: table; }
-
-/*# sourceMappingURL=main.css.map */
