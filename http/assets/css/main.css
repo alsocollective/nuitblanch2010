@@ -8,6 +8,24 @@
   font-weight: bold;
   text-transform: uppercase; }
 
+@font-face {
+  font-family: 'Lato';
+  font-weight: 100;
+  font-style: normal;
+  src: url("/assets/fonts/Lato-100/Lato-100.eot");
+  src: url("/assets/fonts/Lato-100/Lato-100.eot?#iefix") format("embedded-opentype"), local("Lato Hairline"), local("Lato-100"), url("/assets/fonts/Lato-100/Lato-100.woff2") format("woff2"), url("/assets/fonts/Lato-100/Lato-100.woff") format("woff"), url("/assets/fonts/Lato-100/Lato-100.ttf") format("truetype"), url("/assets/fonts/Lato-100/Lato-100.svg#Lato") format("svg"); }
+@font-face {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/fonts/Lato-regular/Lato-regular.eot");
+  src: url("/assets/fonts/Lato-regular/Lato-regular.eot?#iefix") format("embedded-opentype"), local("Lato Regular"), local("Lato-regular"), url("/assets/fonts/Lato-regular/Lato-regular.woff2") format("woff2"), url("/assets/fonts/Lato-regular/Lato-regular.woff") format("woff"), url("/assets/fonts/Lato-regular/Lato-regular.ttf") format("truetype"), url("/assets/fonts/Lato-regular/Lato-regular.svg#Lato") format("svg"); }
+@font-face {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-style: normal;
+  src: url("/assets/fonts/Lato-700/Lato-700.eot");
+  src: url("/assets/fonts/Lato-700/Lato-700.eot?#iefix") format("embedded-opentype"), local("Lato Bold"), local("Lato-700"), url("/assets/fonts/Lato-700/Lato-700.woff2") format("woff2"), url("/assets/fonts/Lato-700/Lato-700.woff") format("woff"), url("/assets/fonts/Lato-700/Lato-700.ttf") format("truetype"), url("/assets/fonts/Lato-700/Lato-700.svg#Lato") format("svg"); }
 html, body {
   padding: 0;
   margin: 0;
@@ -60,26 +78,6 @@ ul, li {
 a {
   color: inherit; }
 
-/*
-@font-face {
-  font-family: 'Lekton';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lekton'), local('Lekton-Regular'), url(/assets/fonts/lekton-regular.woff) format('woff');
-}
-@font-face {
-  font-family: 'Lekton';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lekton-Bold'), url(/assets/fonts/lekton-bold.woff) format('woff');
-}
-@font-face {
-  font-family: 'Lekton';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lekton-Italic'), url(/assets/fonts/lekton-italic.woff) format('woff');
-}
-*/
 #phase1 {
   display: none; }
 
