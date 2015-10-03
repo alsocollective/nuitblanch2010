@@ -150,6 +150,8 @@ PAIR.WAIT.in_data_queue = function() {
 // cancle in data queue
 PAIR.IN.paired = function(data) {
 	window.clearTimeout(PAIR.WAIT.in_data_queue_holder);
+	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
+	clearInterval(REC.beat_holder);
 	$(document.body).removeClass("found_potential_pair");
 	APP.pr("MATCHED!");
 	GAME.phase5.init(data);
