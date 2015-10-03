@@ -16,8 +16,8 @@
   font-family: 'Lato';
   font-weight: 300;
   font-style: normal;
-  src: url('/assets/fonts/Lato-700/Lato-300.eot');
-  src: url('/assets/fonts/Lato-700/Lato-300.eot?#iefix') format('embedded-opentype'),
+  src: url('/assets/fonts/Lato-300/Lato-300.eot');
+  src: url('/assets/fonts/Lato-300/Lato-300.eot?#iefix') format('embedded-opentype'),
        local('Lato Light'),
        local('Lato-300'),
        url('/assets/fonts/Lato-300/Lato-300.woff2') format('woff2'),
@@ -63,12 +63,12 @@ html,body{
 	// overflow: hidden;
 	//-webkit-touch-callout: none;
 
-	-webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	// -webkit-touch-callout: none;
+ //    -webkit-user-select: none;
+ //    -khtml-user-select: none;
+ //    -moz-user-select: none;
+ //    -ms-user-select: none;
+ //    user-select: none;
 
 	text-align: center;
 	background-color: $black;
@@ -76,7 +76,7 @@ html,body{
 	color: $white;
 
 	@include vendorize('user-select','none');
-	@include vendorize('font-smoothing','antialiased');
+	//@include vendorize('font-smoothing','antialiased');
 
 	//font-family: 'Lekton', sans-serif;
 	font-family: 'Lato', sans-serif;
@@ -137,8 +137,6 @@ html,body{
 	}
 }
 
-
-
 h1,h2,h3,h4,h5{
 }
 
@@ -196,6 +194,7 @@ button {
     height: 8rem;
     border-radius: 100%;
     font-size: inherit;
+    font-weight: 100 !important;
     /* color: inherit; */
     /* font-family: inherit; */
     /* font-weight: inherit; */

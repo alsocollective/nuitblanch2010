@@ -28,7 +28,6 @@
     right: 50%;
 }
 
-
 .pairing_container .pairing_child .inner {
 	position: absolute;
     top: 0;
@@ -49,7 +48,7 @@
 .pairing_ring1 {
     @include animation('radiate 1.5s infinite');
 }
-.pairing_ring2 {
+/*.pairing_ring2 {
     @include animation('radiate 3s infinite');
 }
 .pairing_ring3 {
@@ -57,7 +56,7 @@
 }
 .pairing_ring4 {
     @include animation('radiate 4.5s infinite');
-}
+}*/
 
 
 //Found match pairing state
@@ -88,7 +87,7 @@
 .pairing_ring1.match_found {
     @include animation('radiate 0.25s infinite');
 }
-.pairing_ring2.match_found{
+/*.pairing_ring2.match_found{
     @include animation('radiate 0.5s infinite');
 }
 .pairing_ring3.match_found{
@@ -96,4 +95,4 @@
 }
 .pairing_ring4.match_found{
     @include animation('radiate 1.5s infinite');
-}
+}*/

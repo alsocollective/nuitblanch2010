@@ -18,8 +18,8 @@
   font-family: 'Lato';
   font-weight: 300;
   font-style: normal;
-  src: url("/assets/fonts/Lato-700/Lato-300.eot");
-  src: url("/assets/fonts/Lato-700/Lato-300.eot?#iefix") format("embedded-opentype"), local("Lato Light"), local("Lato-300"), url("/assets/fonts/Lato-300/Lato-300.woff2") format("woff2"), url("/assets/fonts/Lato-300/Lato-300.woff") format("woff"), url("/assets/fonts/Lato-300/Lato-300.ttf") format("truetype"), url("/assets/fonts/Lato-300/Lato-300.svg#Lato") format("svg"); }
+  src: url("/assets/fonts/Lato-300/Lato-300.eot");
+  src: url("/assets/fonts/Lato-300/Lato-300.eot?#iefix") format("embedded-opentype"), local("Lato Light"), local("Lato-300"), url("/assets/fonts/Lato-300/Lato-300.woff2") format("woff2"), url("/assets/fonts/Lato-300/Lato-300.woff") format("woff"), url("/assets/fonts/Lato-300/Lato-300.ttf") format("truetype"), url("/assets/fonts/Lato-300/Lato-300.svg#Lato") format("svg"); }
 @font-face {
   font-family: 'Lato';
   font-weight: 400;
@@ -38,12 +38,6 @@ html, body {
   min-height: 100%;
   min-height: 100vh;
   width: 100%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   text-align: center;
   background-color: #222;
   color: #fff;
@@ -52,11 +46,6 @@ html, body {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
-  -webkit-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   font-family: 'Lato', sans-serif;
   font-weight: 100;
   font-size: 1.25rem; }
@@ -175,6 +164,7 @@ button, .center_icon_change {
   height: 8rem;
   border-radius: 100%;
   font-size: inherit;
+  font-weight: 100 !important;
   /* color: inherit; */
   /* font-family: inherit; */
   /* font-weight: inherit; */ }
@@ -299,6 +289,14 @@ button, .center_icon_change {
 img[src=""] {
   display: none; }
 
+#phase1 {
+  font-family: 'Lato', sans-serif;
+  background-color: rgba(0, 0, 0, 0.6); }
+  #phase1 button, #phase1 .center_icon_change {
+    color: #fff;
+    font-weight: 100;
+    font-family: 'Lato',sans-serif; }
+
 .pairing_container {
   width: 50px;
   /* pick whatever width you want */
@@ -349,27 +347,15 @@ img[src=""] {
   -o-animation: radiate 1.5s infinite;
   animation: radiate 1.5s infinite; }
 
-.pairing_ring2 {
-  -webkit-animation: radiate 3s infinite;
-  -moz-animation: radiate 3s infinite;
-  -ms-animation: radiate 3s infinite;
-  -o-animation: radiate 3s infinite;
-  animation: radiate 3s infinite; }
-
+/*.pairing_ring2 {
+    @include animation('radiate 3s infinite');
+}
 .pairing_ring3 {
-  -webkit-animation: radiate 4s infinite;
-  -moz-animation: radiate 4s infinite;
-  -ms-animation: radiate 4s infinite;
-  -o-animation: radiate 4s infinite;
-  animation: radiate 4s infinite; }
-
+    @include animation('radiate 4s infinite');
+}
 .pairing_ring4 {
-  -webkit-animation: radiate 4.5s infinite;
-  -moz-animation: radiate 4.5s infinite;
-  -ms-animation: radiate 4.5s infinite;
-  -o-animation: radiate 4.5s infinite;
-  animation: radiate 4.5s infinite; }
-
+    @include animation('radiate 4.5s infinite');
+}*/
 .pairing_ring1.match_found, .pairing_ring2.match_found, .pairing_ring3.match_found, .pairing_ring4.match_found {
   border-radius: 50%;
   border: 15px solid #fff;
@@ -403,27 +389,15 @@ img[src=""] {
   -o-animation: radiate 0.25s infinite;
   animation: radiate 0.25s infinite; }
 
-.pairing_ring2.match_found {
-  -webkit-animation: radiate 0.5s infinite;
-  -moz-animation: radiate 0.5s infinite;
-  -ms-animation: radiate 0.5s infinite;
-  -o-animation: radiate 0.5s infinite;
-  animation: radiate 0.5s infinite; }
-
-.pairing_ring3.match_found {
-  -webkit-animation: radiate 1s infinite;
-  -moz-animation: radiate 1s infinite;
-  -ms-animation: radiate 1s infinite;
-  -o-animation: radiate 1s infinite;
-  animation: radiate 1s infinite; }
-
-.pairing_ring4.match_found {
-  -webkit-animation: radiate 1.5s infinite;
-  -moz-animation: radiate 1.5s infinite;
-  -ms-animation: radiate 1.5s infinite;
-  -o-animation: radiate 1.5s infinite;
-  animation: radiate 1.5s infinite; }
-
+/*.pairing_ring2.match_found{
+    @include animation('radiate 0.5s infinite');
+}
+.pairing_ring3.match_found{
+    @include animation('radiate 1s infinite');
+}
+.pairing_ring4.match_found{
+    @include animation('radiate 1.5s infinite');
+}*/
 .phase5 img {
   width: 25%; }
 
@@ -431,7 +405,6 @@ img[src=""] {
   width: 100%;
   height: 100%;
   height: 100vh;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: -2; }
