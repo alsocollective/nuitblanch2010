@@ -112,7 +112,7 @@ html,body{
 }
 
 //@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-@media (min-height: 481px) {
+@media screen and (min-height: 481px) {
 	#wrapper {
 		@include vendorize(transform,translate3d(0, 0, 0));
 		@include vendorize(transform,translateZ(0));
@@ -124,6 +124,17 @@ html,body{
 		}
 	}
 
+}
+
+#wrapper.force_hardware_excel{
+	@include vendorize(transform,translate3d(0, 0, 0));
+	@include vendorize(transform,translateZ(0));
+	#background_container_a, #background_container_b {
+	z-index: -2;
+	    &.active{
+	    	z-index: -1;
+	    }
+	}
 }
 
 

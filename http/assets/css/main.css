@@ -76,7 +76,7 @@ html, body {
   #wrapper #background_container_a.active, #wrapper #background_container_b.active {
     z-index: 1; }
 
-@media (min-height: 481px) {
+@media screen and (min-height: 481px) {
   #wrapper {
     -webkit-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -92,6 +92,22 @@ html, body {
       z-index: -2; }
       #wrapper #background_container_a.active, #wrapper #background_container_b.active {
         z-index: -1; } }
+#wrapper.force_hardware_excel {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0); }
+  #wrapper.force_hardware_excel #background_container_a, #wrapper.force_hardware_excel #background_container_b {
+    z-index: -2; }
+    #wrapper.force_hardware_excel #background_container_a.active, #wrapper.force_hardware_excel #background_container_b.active {
+      z-index: -1; }
+
 p {
   width: 80%;
   margin: 1rem auto 1rem; }
