@@ -17,8 +17,9 @@
     position: relative;
 }
 
-.pair_ui {
+#pair_ui {
     position: relative;
+    z-index: 2;
 }
 
 .pairing_child {
