@@ -257,6 +257,10 @@ img[src=""] {
   margin: 0 auto; }
   .pairing_container button, .pairing_container .center_icon_change {
     position: absolute;
+    -webkit-transform: translate(-50%, -10%);
+    -ms-transform: translate(-50%, -10%);
+    -moz-transform: translate(-50%, -10%);
+    -o-transform: translate(-50%, -10%);
     transform: translate(-50%, -10%);
     z-index: 1; }
 
@@ -284,6 +288,10 @@ img[src=""] {
   border: 6px solid #fff;
   display: inline;
   position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
 .pairing_ring1 {

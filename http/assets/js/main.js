@@ -15,7 +15,7 @@ var APP = {
 			console.log(data);
 			return false;
 		}
-		if (!data.length) {
+		if (data && !data.length) {
 			console.log("\n\n");
 			for (var key in data) {
 				console.log(key);
