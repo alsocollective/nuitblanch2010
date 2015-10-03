@@ -31,10 +31,10 @@
     0% {
         opacity: 1;
     }
-    40% {
+    45% {
         opacity: 0;
     }
-    60% {
+    55% {
         opacity: 0;
     }
     100% {
@@ -43,7 +43,7 @@
 }
 
 .fade_out_in{
-    @include animation('fade_out_in 10s');
+    @include animation('fade_out_in 8s');
 }
 
 .fadeIn {
