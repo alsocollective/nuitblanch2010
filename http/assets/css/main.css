@@ -39,8 +39,8 @@ html, body {
   -ms-user-select: none;
   user-select: none;
   text-align: center;
-  background-color: #222222;
-  color: white;
+  background-color: #222;
+  color: #fff;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -180,11 +180,11 @@ button, .center_icon_change {
 
 .open {
   width: 220%;
-  -webkit-transition: width 2.25s ease-out;
-  -moz-transition: width 2.25s ease-out;
-  -ms-transition: width 2.25s ease-out;
-  -o-transition: width 2.25s ease-out;
-  transition: width 2.25s ease-out;
+  -webkit-transition: width 0.25s ease-out;
+  -moz-transition: width 0.25s ease-out;
+  -ms-transition: width 0.25s ease-out;
+  -o-transition: width 0.25s ease-out;
+  transition: width 0.25s ease-out;
   transform: translate(-50%, -50%);
   border-radius: 50%; }
 
@@ -229,7 +229,7 @@ button, .center_icon_change {
 .center_icon_change {
   margin: 0 auto; }
   .center_icon_change:active, .center_icon_change:focus {
-    background-color: #222222; }
+    background-color: #222; }
 
 .tracking_motion {
   background-color: #f0c; }
@@ -258,8 +258,9 @@ button, .center_icon_change {
 .pair_ui_container {
   position: relative; }
 
-.pair_ui {
-  position: relative; }
+#pair_ui {
+  position: relative;
+  z-index: 2; }
 
 .pairing_child {
   position: absolute;
@@ -330,79 +331,69 @@ button, .center_icon_change {
 @-webkit-keyframes fadein {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-moz-keyframes fadein {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-ms-keyframes fadein {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-o-keyframes fadein {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @keyframes fadein {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-webkit-keyframes radiate {
   0% {
-    width: 50px;
-    height: 50px;
+    width: 8rem;
+    height: 8rem;
     opacity: 1; }
-
   100% {
     width: 300px;
     height: 300px;
     opacity: 0; } }
 @-moz-keyframes radiate {
   0% {
-    width: 50px;
-    height: 50px;
+    width: 8rem;
+    height: 8rem;
     opacity: 1; }
-
   100% {
     width: 300px;
     height: 300px;
     opacity: 0; } }
 @-ms-keyframes radiate {
   0% {
-    width: 50px;
-    height: 50px;
+    width: 8rem;
+    height: 8rem;
     opacity: 1; }
-
   100% {
     width: 300px;
     height: 300px;
     opacity: 0; } }
 @-o-keyframes radiate {
   0% {
-    width: 50px;
-    height: 50px;
+    width: 8rem;
+    height: 8rem;
     opacity: 1; }
-
   100% {
     width: 300px;
     height: 300px;
     opacity: 0; } }
 @keyframes radiate {
   0% {
-    width: 50px;
-    height: 50px;
+    width: 8rem;
+    height: 8rem;
     opacity: 1; }
-
   100% {
     width: 300px;
     height: 300px;
@@ -411,7 +402,6 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
-
   100% {
     opacity: 0;
     display: none; } }
@@ -419,7 +409,6 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
-
   100% {
     opacity: 0;
     display: none; } }
@@ -427,7 +416,6 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
-
   100% {
     opacity: 0;
     display: none; } }
@@ -435,7 +423,6 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
-
   100% {
     opacity: 0;
     display: none; } }
@@ -443,68 +430,52 @@ button, .center_icon_change {
   0% {
     opacity: 1;
     display: block; }
-
   100% {
     opacity: 0;
     display: none; } }
 @-webkit-keyframes fade_out_in {
   0% {
     opacity: 1; }
-
   40% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-moz-keyframes fade_out_in {
   0% {
     opacity: 1; }
-
   40% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-ms-keyframes fade_out_in {
   0% {
     opacity: 1; }
-
   40% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-o-keyframes fade_out_in {
   0% {
     opacity: 1; }
-
   40% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @keyframes fade_out_in {
   0% {
     opacity: 1; }
-
   40% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 .fade_out_in {
@@ -549,7 +520,7 @@ button, .center_icon_change {
   width: 100%;
   height: 100%;
   height: 100vh;
-  background-color: #222222;
+  background-color: #222;
   text-align: center;
   font-weight: normal;
   font-size: 1rem; }
@@ -560,3 +531,5 @@ button, .center_icon_change {
 
 .captive_portal_active #captive_portal {
   display: table; }
+
+/*# sourceMappingURL=main.css.map */

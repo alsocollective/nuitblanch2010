@@ -102,6 +102,7 @@ GAME.phase3 = {
 GAME.phase4 = {
 	init: function() {
 		$(document.body).removeClass().addClass("phase4 " + PAIR.D.element);
+		$("#pair_ui").addClass("show");
 	}
 }
 
