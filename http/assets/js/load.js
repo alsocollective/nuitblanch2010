@@ -113,7 +113,7 @@ var LOAD = {
 
 				if (LOAD.count > LOAD.background_lengths[LOAD.special] - 1) {
 					LOAD.special = null;
-					GAME.phase3.init(true);
+					GAME.phase3.init();
 				}
 			}
 

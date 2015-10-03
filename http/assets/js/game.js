@@ -72,13 +72,6 @@ GAME.phase2 = {
 // The first step in pairing!
 GAME.phase3 = {
 	init: function(error) {
-		if (!error) {
-			GAME.phase5.init({
-				"outcome": "birds",
-				"become_element": "water"
-			});
-			return false;
-		};
 		PAIR.D.element = Cookies.get('element');
 		PAIR.init();
 
