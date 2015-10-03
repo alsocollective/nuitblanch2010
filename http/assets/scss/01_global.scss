@@ -74,6 +74,10 @@ html,body{
     font-size: 1.25rem;
 }
 
+body {
+	overflow: hidden;
+}
+
 //Vendorize NOT SURE IF THIS WORKS MIGHT NEED TO ONLY BE APPLIED TO ANIMATIONS
 #wrapper {
 	// @include vendorize(transform,translate3d(0, 0, 0));

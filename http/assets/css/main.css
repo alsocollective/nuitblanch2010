@@ -50,6 +50,9 @@ html, body {
   font-weight: 100;
   font-size: 1.25rem; }
 
+body {
+  overflow: hidden; }
+
 #wrapper > div {
   z-index: 2;
   position: absolute;
