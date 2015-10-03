@@ -331,7 +331,7 @@ img[src=""] {
 
 .pairing_ring1, .pairing_ring2, .pairing_ring3, .pairing_ring4 {
   border-radius: 50%;
-  border: 6px solid #fff;
+  border: 10px solid #fff;
   display: inline;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -341,24 +341,15 @@ img[src=""] {
   transform: translate(-50%, -50%); }
 
 .pairing_ring1 {
-  -webkit-animation: radiate 1.5s infinite;
-  -moz-animation: radiate 1.5s infinite;
-  -ms-animation: radiate 1.5s infinite;
-  -o-animation: radiate 1.5s infinite;
-  animation: radiate 1.5s infinite; }
+  -webkit-animation: radiate 4s infinite;
+  -moz-animation: radiate 4s infinite;
+  -ms-animation: radiate 4s infinite;
+  -o-animation: radiate 4s infinite;
+  animation: radiate 4s infinite; }
 
-/*.pairing_ring2 {
-    @include animation('radiate 3s infinite');
-}
-.pairing_ring3 {
-    @include animation('radiate 4s infinite');
-}
-.pairing_ring4 {
-    @include animation('radiate 4.5s infinite');
-}*/
 .pairing_ring1.match_found, .pairing_ring2.match_found, .pairing_ring3.match_found, .pairing_ring4.match_found {
   border-radius: 50%;
-  border: 15px solid #fff;
+  border: 40px solid #fff;
   display: inline;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -367,37 +358,13 @@ img[src=""] {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-/*.pairing_ring1.match_found {
-    border-radius: 50%;
-    border: 15px solid #fff;
-    display: inline;
-    position: absolute;
-    @include vendorize(transform, translate(-50%,-45%));
-}
-
-.pairing_ring2.match_found {
-    border-radius: 50%;
-    border: 15px solid #fff;
-    display: inline;
-    position: absolute;
-    @include vendorize(transform, translate(-50%,-65%));
-}*/
 .pairing_ring1.match_found {
-  -webkit-animation: radiate 0.25s infinite;
-  -moz-animation: radiate 0.25s infinite;
-  -ms-animation: radiate 0.25s infinite;
-  -o-animation: radiate 0.25s infinite;
-  animation: radiate 0.25s infinite; }
+  -webkit-animation: radiate 2s infinite;
+  -moz-animation: radiate 2s infinite;
+  -ms-animation: radiate 2s infinite;
+  -o-animation: radiate 2s infinite;
+  animation: radiate 2s infinite; }
 
-/*.pairing_ring2.match_found{
-    @include animation('radiate 0.5s infinite');
-}
-.pairing_ring3.match_found{
-    @include animation('radiate 1s infinite');
-}
-.pairing_ring4.match_found{
-    @include animation('radiate 1.5s infinite');
-}*/
 .phase5 img {
   width: 25%; }
 
@@ -441,48 +408,48 @@ img[src=""] {
     opacity: 1; } }
 @-webkit-keyframes radiate {
   0% {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     opacity: 1; }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 7rem;
+    height: 7rem;
     opacity: 0; } }
 @-moz-keyframes radiate {
   0% {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     opacity: 1; }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 7rem;
+    height: 7rem;
     opacity: 0; } }
 @-ms-keyframes radiate {
   0% {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     opacity: 1; }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 7rem;
+    height: 7rem;
     opacity: 0; } }
 @-o-keyframes radiate {
   0% {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     opacity: 1; }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 7rem;
+    height: 7rem;
     opacity: 0; } }
 @keyframes radiate {
   0% {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     opacity: 1; }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 7rem;
+    height: 7rem;
     opacity: 0; } }
 @-webkit-keyframes faderemove {
   0% {
