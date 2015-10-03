@@ -1,5 +1,5 @@
 var APP = {
-	fullscreen: true,
+	fullscreen: false,
 	IP: "192.168.2.1:80",
 	//IP: "10.0.1.7:8000",
 	init: function() {

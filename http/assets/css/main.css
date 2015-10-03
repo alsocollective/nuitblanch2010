@@ -290,16 +290,16 @@ button, .center_icon_change {
 #background_element_color.water {
   background-color: #61abce; }
 
-body.human {
+body.human.found_potential_pair {
   background-color: #a63534; }
 
-body.wave {
+body.wave.found_potential_pair {
   background-color: #ddcd47; }
 
-body.cellular {
+body.cellular.found_potential_pair {
   background-color: #4db140; }
 
-body.water {
+body.water.found_potential_pair {
   background-color: #61abce; }
 
 img[src=""] {

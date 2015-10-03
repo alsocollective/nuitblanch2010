@@ -65,7 +65,7 @@ GAME.phase2 = {
 		setTimeout(function() {
 			GAME.phase3.init();
 			return false;
-		}, 2500);
+		}, 2000);
 	}
 }
 
@@ -81,12 +81,13 @@ GAME.phase3 = {
 		}
 		if (!error) {
 			error = "";
-		} else {
+		}
+		/*else {
 			$("#user_errors").removeClass().addClass(error + " fade_remove");
 			setTimeout(function() {
 				$("#user_errors").removeClass();
 			}, 3000);
-		}
+		}*/
 		LOAD.set_new_user_type_and_start(PAIR.D.element);
 		APP.pr(error); //for debugging
 		//$(document.body).removeClass().addClass("phase3 " + PAIR.D.element + error);
@@ -119,8 +120,6 @@ GAME.phase5 = {
 
 		// animate the explosion one cylce
 		LOAD.set_special_animation(elements["outcome"]);
-
-
 
 		// if (GAME.phase5.first) {
 		// 	GAME.phase5.first = false;

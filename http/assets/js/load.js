@@ -95,7 +95,7 @@ var LOAD = {
 				// check if it's the last loop
 
 				// exit animation begins
-				if (LOAD.count + 15 > LOAD.background_lengths[LOAD.special]) {
+				if (LOAD.count + 15 > LOAD.background_lengths[LOAD.special] && LOAD.count > LOAD.background_lengths[LOAD.special] - 1) {
 					$("#wrapper").addClass("fade_out_in");
 				}
 
