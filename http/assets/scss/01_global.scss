@@ -73,7 +73,7 @@ html,body{
 
 //Vendorize NOT SURE IF THIS WORKS MIGHT NEED TO ONLY BE APPLIED TO ANIMATIONS
 #wrapper {
-   -webkit-transform: translate3d(0, 0, 0);
+   /*-webkit-transform: translate3d(0, 0, 0);
    -moz-transform: translate3d(0, 0, 0);
    -ms-transform: translate3d(0, 0, 0);
    transform: translate3d(0, 0, 0);
@@ -82,7 +82,7 @@ html,body{
    -moz-transform: translateZ(0);
    -ms-transform: translateZ(0);
    -o-transform: translateZ(0);
-   transform: translateZ(0);
+   transform: translateZ(0);*/
 }
 
 h1,h2,h3,h4,h5{
