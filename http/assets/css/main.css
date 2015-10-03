@@ -431,7 +431,8 @@ button, .center_icon_change {
   font-size: 1rem; }
   #captive_portal > div {
     display: table-cell;
-    vertical-align: middle; }
+    vertical-align: middle;
+    width: 90%; }
 
 .captive_portal_active #captive_portal {
   display: table; }
