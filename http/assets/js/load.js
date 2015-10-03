@@ -111,7 +111,7 @@ var LOAD = {
 		// console.log("special animation");
 		LOAD.special = outcome_type;
 		LOAD.count = 0;
-		LOAD.loop_times = 0;
+		LOAD.loop_times = 2;
 		$("#wrapper").removeClass("fade_out_in");
 		// $("#pairing_success_icon").removeClass("fade_out_in");
 		$("#pairing_success_icon img").attr("src", "/assets/img/outcomes_icons_centered/" + outcome_type + ".png");

@@ -134,7 +134,7 @@ PAIR.OUT.finished_recording = function(data) {
 	APP.print_data(data);
 	PAIR.socket.emit("recording finished", data);
 	clearTimeout(PAIR.WAIT.in_data_queue_holder);
-	PAIR.WAIT.in_data_queue_holder = window.setTimeout(PAIR.WAIT.in_data_queue, PAIR.D.wait_time * 5);
+	PAIR.WAIT.in_data_queue_holder = window.setTimeout(PAIR.WAIT.in_data_queue, PAIR.D.wait_time * 4);
 };
 
 // if we don't stop we fail
