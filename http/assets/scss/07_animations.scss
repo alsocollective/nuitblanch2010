@@ -5,13 +5,13 @@
 
 @include keyframes(radiate) {
     0% {
-    	width: 8rem; 
-    	height: 8rem;
+    	width: 5rem; 
+    	height: 5rem;
     	opacity: 1;
     }
     100% {
-    	width: 300px; 
-    	height: 300px;
+    	width: 7rem; 
+    	height: 7rem;
     	opacity: 0;
     }
 }
@@ -64,10 +64,6 @@
 .fadeIn {
 	@include animation('fadein 10s');
 }
-
-// .pairing {
-// 	@include animation('radiate 2s infinite');
-// }
 
 .fade_remove {
     @include animation('faderemove 3s');

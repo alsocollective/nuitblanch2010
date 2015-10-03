@@ -39,60 +39,25 @@
 //Pairing state
 .pairing_ring1,.pairing_ring2,.pairing_ring3,.pairing_ring4 {
 	border-radius: 50%;
-	border: 6px solid #fff;
+	border: 10px solid #fff;
 	display: inline;
 	position: absolute;
 	@include vendorize(transform, translate(-50%,-50%));
 }
 
 .pairing_ring1 {
-    @include animation('radiate 1.5s infinite');
-}
-/*.pairing_ring2 {
-    @include animation('radiate 3s infinite');
-}
-.pairing_ring3 {
     @include animation('radiate 4s infinite');
 }
-.pairing_ring4 {
-    @include animation('radiate 4.5s infinite');
-}*/
-
 
 //Found match pairing state
 .pairing_ring1.match_found, .pairing_ring2.match_found, .pairing_ring3.match_found,.pairing_ring4.match_found {
     border-radius: 50%;
-    border: 15px solid #fff;
+    border: 40px solid #fff;
     display: inline;
     position: absolute;
     @include vendorize(transform, translate(-50%,-50%));
 }
 
-/*.pairing_ring1.match_found {
-    border-radius: 50%;
-    border: 15px solid #fff;
-    display: inline;
-    position: absolute;
-    @include vendorize(transform, translate(-50%,-45%));
-}
-
-.pairing_ring2.match_found {
-    border-radius: 50%;
-    border: 15px solid #fff;
-    display: inline;
-    position: absolute;
-    @include vendorize(transform, translate(-50%,-65%));
-}*/
-
 .pairing_ring1.match_found {
-    @include animation('radiate 0.25s infinite');
+    @include animation('radiate 2s infinite');
 }
-/*.pairing_ring2.match_found{
-    @include animation('radiate 0.5s infinite');
-}
-.pairing_ring3.match_found{
-    @include animation('radiate 1s infinite');
-}
-.pairing_ring4.match_found{
-    @include animation('radiate 1.5s infinite');
-}*/
