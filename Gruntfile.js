@@ -52,10 +52,10 @@ module.exports = function(grunt) {
 				files: ['**/*.scss'],
 				tasks: ['sass', 'cssmin'] //
 			},
-			node: {
-				files: ['main.js', 'server/*.js'],
-				tasks: ['nodemon']
-			}
+			// node: {
+			// 	files: ['main.js', 'server/*.js'],
+			// 	tasks: ['nodemon']
+			// }
 			// js: {
 			// 	// files: 'application/static/js/main.js',
 			// 	// tasks: ['uglify']

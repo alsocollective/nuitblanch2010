@@ -116,7 +116,7 @@ a{
 	}
 }
 
-button{
+/*button{
 	background-color: $black;
 	border: 1px solid $black;
 	width: 8rem;
@@ -133,9 +133,52 @@ button{
 		outline:none;
 		background-color: transparent;
 	}
+}*/
+
+button {
+	background-color: transparent;
+    border: 1px solid #ccc;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    font-size: inherit;
+    /* color: inherit; */
+    /* font-family: inherit; */
+    /* font-weight: inherit; */
+    box-shadow: 0 0 55px #fff;
 }
 
-.center_w_table{
+.water,.human,.cellular,.wave {
+	button {
+		background-size: 35%;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	}
+}
+
+.human {
+	button {
+		background-image: url(/assets/img/elements/human.png);
+	}
+}
+.wave {
+	button {
+		background-image: url(/assets/img/elements/wave.png);
+	}
+}
+.cellular {
+	button {
+		background-image: url(/assets/img/elements/cellular.png);
+	}
+}
+.water {
+	button {
+		background-image: url(/assets/img/elements/water.png);
+	}
+}
+
+
+.center_w_table {
 	display: table;
 	height: 100%;
 	width: 100%;
@@ -144,6 +187,8 @@ button{
 		vertical-align: middle;
 	}
 }
+
+
 
 
 
@@ -191,6 +236,7 @@ button{
 	text-align: center;
 	width: 100%;
 	padding: 0.5rem;
+	display: none;
 }
 
 // Pase 2
@@ -202,7 +248,7 @@ button{
 		li{
 			//width: 50%;
 			display: inline-table;
-			padding: 2rem;
+			padding: 1.65rem;
 			a{
 				display: table-cell;
 				padding: 0px;

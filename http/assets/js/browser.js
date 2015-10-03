@@ -1,6 +1,10 @@
 var BROWSER = {
-	init: function() {
+	init: function(skip) {
+		console.log(skip);
 		$.getJSON("/safdkasdfsfsdasfadsdfasadf.json", BROWSER.sucess)
+		if (skip) {
+			BROWSER.make_captive_portal_active();
+		}
 	},
 	sucess: function(agent) {
 		agent = agent.toLowerCase();
@@ -22,6 +26,7 @@ var BROWSER = {
 		// alert(agent);
 	},
 	make_captive_portal_active: function() {
-		$(document.body).addClass("captive_portal_active")
+		console.log("captive portal");
+		$("#wrapper").addClass("captive_portal_active")
 	}
 }
