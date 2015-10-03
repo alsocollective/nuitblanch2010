@@ -110,7 +110,8 @@ PAIR.WAIT.in_tap_queue = function() {
 // there are others in the queue with us
 // we cancle in tap queue 
 PAIR.IN.continue_to_record = function(data) {
-	console.log("continue to record")
+	console.log("continue to record");
+	$(document.body).addClass("found_potential_pair");
 	APP.pr("potential " + data);
 	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
 };
@@ -118,6 +119,7 @@ PAIR.IN.continue_to_record = function(data) {
 // gets called when we reach the last beat of the recording
 // send our data to the server
 PAIR.OUT.finished_recording = function(data) {
+	$(document.body).removeClass("found_potential_pair");
 	console.log("sending this data...")
 	// console.log(data)
 	APP.print_data(data);
@@ -138,6 +140,7 @@ PAIR.WAIT.in_data_queue = function() {
 // cancle in data queue
 PAIR.IN.paired = function(data) {
 	window.clearTimeout(PAIR.WAIT.in_data_queue_holder);
+	$(document.body).removeClass("found_potential_pair");
 	APP.pr("MATCHED!");
 	GAME.phase5.init(data);
 };

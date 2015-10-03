@@ -17,8 +17,6 @@ GAME.phase1 = {
 	init: function() {
 		$(document.body).removeClass().addClass("phase1");
 
-		LOAD.init("wave");
-
 		if (GAME.phase1.first) {
 			$("#user_to_phase2").click(GAME.phase1.next_phase);
 			GAME.phase1.first = false;
@@ -51,11 +49,8 @@ GAME.phase2 = {
 		event.preventDefault();
 		var userElement = this.href.split("#").pop();
 		Cookies.set('element', userElement);
+
 		$("#background_element_color").addClass(userElement);
-
-		$("#background_container").addClass(userElement);
-
-		LOAD.init(String(userElement));
 
 		GAME.phase2.next_phase(event);
 		return false;
@@ -64,8 +59,8 @@ GAME.phase2 = {
 		event.preventDefault();
 		$("#background_element_color").addClass("open");
 
-		setInterval(function() {
-			GAME.phase3.init(); //Please clear this interval!!!!!
+		setTimeout(function() {
+			GAME.phase3.init();
 			return false;
 		}, 2500);
 	}
@@ -94,7 +89,7 @@ GAME.phase3 = {
 				$("#user_errors").removeClass();
 			}, 3000);
 		}
-		APP.pr(error);
+		APP.pr(error); //for debugging
 		//$(document.body).removeClass().addClass("phase3 " + PAIR.D.element + error);
 		$(document.body).removeClass().addClass("phase3 " + PAIR.D.element);
 		//Start the pairing process
