@@ -1,5 +1,5 @@
 var APP = {
-	fullscreen: false,
+	fullscreen: true,
 	IP: "192.168.2.1:80",
 	//IP: "10.0.1.7:8000",
 	init: function() {
@@ -8,7 +8,7 @@ var APP = {
 		LOAD.init();
 	},
 	pr: function(message) {
-		$("#jsmessage")[0].innerHTML = message;
+		// $("#jsmessage")[0].innerHTML = message;
 	},
 	print_data: function(data) {
 		if (typeof(data) !== "object" && !data.length) {
