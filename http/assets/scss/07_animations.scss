@@ -1,0 +1,40 @@
+@include keyframes(fadein) {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@include keyframes(radiate) {
+    0% {
+    	width: 10px; 
+    	height: 10px;
+    	opacity: 1;
+    }
+    100% {
+    	width: 300px; 
+    	height: 300px;
+    	opacity: 0;
+    }
+}
+
+@include keyframes(faderemove) {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.fadeIn {
+	@include animation('fadein 10s');
+}
+
+.pairing {
+	@include animation('radiate 2s infinite')
+}
+
+.fade_remove {
+    @include animation('faderemove 3s');
+}

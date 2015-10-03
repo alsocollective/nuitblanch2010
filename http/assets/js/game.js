@@ -77,6 +77,11 @@ GAME.phase3 = {
 		PAIR.D.element = Cookies.get('element');
 		PAIR.init();
 
+		var elementTest = {
+			"outcome": "nuke",
+			"become_element": "human"
+		};
+
 		if (!PAIR.D.element) {
 			GAME.phase2.init();
 			return false;
@@ -84,10 +89,14 @@ GAME.phase3 = {
 		if (!error) {
 			error = "";
 		} else {
-			$("#user_errors").removeClass().addClass(error);
+			$("#user_errors").removeClass().addClass(error + " fade_remove");
+			setTimeout(function() {
+				$("#user_errors").removeClass();
+			}, 3000);
 		}
 		APP.pr(error);
-		$(document.body).removeClass().addClass("phase3 " + PAIR.D.element + error);
+		//$(document.body).removeClass().addClass("phase3 " + PAIR.D.element + error);
+		$(document.body).removeClass().addClass("phase3 " + PAIR.D.element);
 		//Start the pairing process
 	}
 }
@@ -98,18 +107,24 @@ GAME.phase3 = {
 
 GAME.phase4 = {
 	init: function() {
+
 		$(document.body).removeClass().addClass("phase4 " + PAIR.D.element);
+		//on click pass into
+
 	}
 }
 
 GAME.phase5 = {
 	first: true,
+	//>> {"outcome":"nuke","become_element":"human"}
 	init: function(elements) {
 		$(document.body).removeClass().addClass("phase5 ");
 		console.log(elements);
 		$("#pairing_success").html(elements);
+
 		if (GAME.phase5.first) {
 			GAME.phase5.first = false;
+
 			$("#paired_keep_playing").click(GAME.phase5.keep_playing);
 		}
 	},
@@ -117,5 +132,8 @@ GAME.phase5 = {
 		event.preventDefault();
 		GAME.phase3.init();
 		return false;
+	},
+	element_swap: function(elements) {
+		console.log(elements);
 	}
 }
