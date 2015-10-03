@@ -4,9 +4,9 @@ var PAIR = {
 	},
 	socket: null,
 	init: function() {
-		console.log("pairing init")
+		// console.log("pairing init")
 		if (!PAIR.socket) {
-			console.log("pairing no socket init")
+			// console.log("pairing no socket init")
 			PAIR.socket = io.connect(APP.ip);
 
 			/*
@@ -86,8 +86,8 @@ PAIR.OUT.joining_queue = function(event) {
 		event.preventDefault();
 		return false;
 	}
-	console.log("joining queue");
-	APP.pr("tapped!");
+	// console.log("joining queue");
+	// APP.pr("tapped!");
 	PAIR.socket.emit("join queue", "PAIR.D")
 	GAME.phase4.init();
 	if (APP.fullscreen && screenfull.enabled) {
@@ -97,8 +97,8 @@ PAIR.OUT.joining_queue = function(event) {
 
 // we geing the in tap que
 PAIR.IN.joined_queue = function(data) {
-	console.log("joined queue, wait " + data + " before exiting");
-	console.log(data * 2);
+	// console.log("joined queue, wait " + data + " before exiting");
+	// console.log(data * 2);
 	PAIR.D.wait_time = data;
 	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
 	REC.start();
@@ -109,7 +109,7 @@ PAIR.IN.joined_queue = function(data) {
 // go back to phase 3
 PAIR.WAIT.in_tap_queue_holder = null
 PAIR.WAIT.in_tap_queue = function() {
-	console.log("cancle queue")
+	// console.log("cancle queue")
 	REC.stop_failed();
 	GAME.phase3.init(" no_time_pair");
 };
@@ -118,10 +118,10 @@ PAIR.WAIT.in_tap_queue = function() {
 // there are others in the queue with us
 // we cancle in tap queue 
 PAIR.IN.continue_to_record = function(data) {
-	console.log("continue to record");
+	// console.log("continue to record");
 	$(document.body).addClass("found_potential_pair");
 	$(".pairing_ring").addClass(" match_found");
-	APP.pr("potential " + data);
+	// APP.pr("potential " + data);
 	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
 };
 
@@ -129,7 +129,7 @@ PAIR.IN.continue_to_record = function(data) {
 // send our data to the server
 PAIR.OUT.finished_recording = function(data) {
 	$(document.body).removeClass("found_potential_pair");
-	console.log("sending this data...")
+	// console.log("sending this data...")
 	// console.log(data)
 	APP.print_data(data);
 	PAIR.socket.emit("recording finished", data);

@@ -16,8 +16,8 @@ REC.start = function() {
 	REC.temp = null;
 	REC.zero = null;
 	REC.raw = null;
-	console.log("start recording");
 	window.addEventListener('deviceorientation', REC.phone_moves_updater, true);
+	clearInterval(REC.beat_holder);
 	REC.beat_holder = setInterval(REC.beat, 50);
 };
 
@@ -38,7 +38,7 @@ REC.beat = function() {
 		if (!REC.raw) {
 			REC.raw = [CALC.zero_data(REC.temp, REC.zero)];
 		} else {
-			REC.beat_print();
+			// REC.beat_print();
 			REC.raw.push(CALC.zero_data(REC.temp, REC.zero));
 		}
 		if (REC.raw.length > REC.ec) {
@@ -61,7 +61,6 @@ REC.beat_print = function() {
 // stop phone moves updater
 // reset zero
 REC.stop = function() {
-	console.log("stoped beat");
 	window.removeEventListener('deviceorientation', REC.phone_moves_updater, true);
 	clearInterval(REC.beat_holder);
 
@@ -77,7 +76,6 @@ REC.stop = function() {
 }
 
 REC.stop_failed = function() {
-	console.log("stoped beat by fail");
 	APP.print_data(REC.raw);
 	window.removeEventListener('deviceorientation', REC.phone_moves_updater, true);
 	clearInterval(REC.beat_holder);
