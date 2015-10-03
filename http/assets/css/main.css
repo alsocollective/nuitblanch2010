@@ -55,18 +55,33 @@ html, body {
   font-weight: 100;
   font-size: 1.25rem; }
 
-#wrapper {
-   /*-webkit-transform: translate3d(0, 0, 0);
-   -moz-transform: translate3d(0, 0, 0);
-   -ms-transform: translate3d(0, 0, 0);
-   transform: translate3d(0, 0, 0);
+#wrapper > div {
+  z-index: 2;
+  position: relative; }
+#wrapper #background_containers {
+  position: static;
+  z-index: 1; }
+#wrapper #background_container_a, #wrapper #background_container_b {
+  z-index: 1; }
+  #wrapper #background_container_a.active, #wrapper #background_container_b.active {
+    z-index: 1; }
 
-   -webkit-transform: translateZ(0);
-   -moz-transform: translateZ(0);
-   -ms-transform: translateZ(0);
-   -o-transform: translateZ(0);
-   transform: translateZ(0);*/ }
-
+@media (min-height: 481px) {
+  #wrapper {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0); }
+    #wrapper #background_container_a, #wrapper #background_container_b {
+      z-index: -2; }
+      #wrapper #background_container_a.active, #wrapper #background_container_b.active {
+        z-index: -1; } }
 p {
   width: 80%;
   margin: 1rem auto 1rem; }
@@ -136,11 +151,17 @@ button, .center_icon_change {
   font-size: inherit;
   /* color: inherit; */
   /* font-family: inherit; */
-  /* font-weight: inherit; */
-  box-shadow: 0 0 55px #fff; }
+  /* font-weight: inherit; */ }
   button:focus, .center_icon_change:focus {
     outline: inherit; }
 
+@media (min-height: 481px) {
+  button, .center_icon_change {
+    -webkit-box-shadow: 0 0 55px #fff;
+    -ms-box-shadow: 0 0 55px #fff;
+    -moz-box-shadow: 0 0 55px #fff;
+    -o-box-shadow: 0 0 55px #fff;
+    box-shadow: 0 0 55px #fff; } }
 .water button, .water .center_icon_change, .human button, .human .center_icon_change, .cellular button, .cellular .center_icon_change, .wave button, .wave .center_icon_change {
   background-size: 35%;
   background-repeat: no-repeat;

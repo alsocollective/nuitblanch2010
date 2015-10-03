@@ -73,17 +73,42 @@ html,body{
 
 //Vendorize NOT SURE IF THIS WORKS MIGHT NEED TO ONLY BE APPLIED TO ANIMATIONS
 #wrapper {
-   /*-webkit-transform: translate3d(0, 0, 0);
-   -moz-transform: translate3d(0, 0, 0);
-   -ms-transform: translate3d(0, 0, 0);
-   transform: translate3d(0, 0, 0);
+	// @include vendorize(transform,translate3d(0, 0, 0));
+	// @include vendorize(transform,translateZ(0));
 
-   -webkit-transform: translateZ(0);
-   -moz-transform: translateZ(0);
-   -ms-transform: translateZ(0);
-   -o-transform: translateZ(0);
-   transform: translateZ(0);*/
+	> div {
+		z-index: 2;
+		position: relative;
+	}
+	
+	#background_containers{
+		position: static;
+		z-index: 1;
+	}
+	#background_container_a, #background_container_b {
+	z-index: 1;
+	    &.active{
+	    	z-index: 1;
+	    }
+	}
 }
+
+//@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+@media (min-height: 481px) {
+	#wrapper {
+		@include vendorize(transform,translate3d(0, 0, 0));
+		@include vendorize(transform,translateZ(0));
+		#background_container_a, #background_container_b {
+		z-index: -2;
+		    &.active{
+		    	z-index: -1;
+		    }
+		}
+	}
+
+}
+
+
 
 h1,h2,h3,h4,h5{
 }
@@ -145,10 +170,15 @@ button {
     /* color: inherit; */
     /* font-family: inherit; */
     /* font-weight: inherit; */
-    box-shadow: 0 0 55px #fff;
+    
     &:focus{
     	outline:inherit;
     }
+}
+@media (min-height: 481px) {
+	button {
+		@include vendorize(box-shadow, 0 0 55px #fff);
+	}
 }
 
 .water,.human,.cellular,.wave {
