@@ -48,21 +48,15 @@ module.exports = function(grunt) {
 				engine: 'gm',
 				newFilesOnly: true,
 				sizes: [{
-					name: 'small',
+					//name: 'small',
 					width: 640
-				}, {
-					name: 'medium',
-					width: 1024
-				}, {
-					name: 'large',
-					width: 1280
 				}],
 			},
 			target: {
 				files: [{
 					expand: true,
 					src: ['*/*/**.{jpg,gif,png}'],
-					cwd: 'http/img_original/img/',
+					cwd: 'http/img_origin/img/',
 					dest: 'http/assets/img/'
 				}]
 			}
