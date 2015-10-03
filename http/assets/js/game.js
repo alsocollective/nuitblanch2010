@@ -72,6 +72,13 @@ GAME.phase2 = {
 // The first step in pairing!
 GAME.phase3 = {
 	init: function(error) {
+		if (!error) {
+			GAME.phase5.init({
+				"outcome": "birds",
+				"become_element": "water"
+			});
+			return false;
+		};
 		PAIR.D.element = Cookies.get('element');
 		PAIR.init();
 
@@ -106,26 +113,34 @@ GAME.phase3 = {
 
 GAME.phase4 = {
 	init: function() {
-
 		$(document.body).removeClass().addClass("phase4 " + PAIR.D.element);
-		//on click pass into
-
 	}
 }
 
 GAME.phase5 = {
-	first: true,
+	// first: true,
 	//>> {"outcome":"nuke","become_element":"human"}
 	init: function(elements) {
-		$(document.body).removeClass().addClass("phase5 ");
-		console.log(elements);
-		$("#pairing_success").html(elements);
+		$(document.body).removeClass().addClass("phase5 " + PAIR.D.element);
+		console.log("===========\nphase5\n===========")
+		$("#pairing_success").html(elements["outcome"]);
 
-		if (GAME.phase5.first) {
-			GAME.phase5.first = false;
+		//set up the new user type
+		LOAD.user_type = elements["become_element"];
+		Cookies.set('element', elements["become_element"]);
 
-			$("#paired_keep_playing").click(GAME.phase5.keep_playing);
-		}
+		// animate the explosion one cylce
+		LOAD.set_special_animation(elements["outcome"]);
+
+
+
+		// if (GAME.phase5.first) {
+		// 	GAME.phase5.first = false;
+		// 	$("#paired_keep_playing").click(GAME.phase5.keep_playing);
+		// }
+	},
+	set_out_come_icon: function(type) {
+
 	},
 	keep_playing: function(event) {
 		event.preventDefault();
@@ -133,6 +148,6 @@ GAME.phase5 = {
 		return false;
 	},
 	element_swap: function(elements) {
-		console.log(elements);
+		// console.log(elements);
 	}
 }

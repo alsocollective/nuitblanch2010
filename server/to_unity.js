@@ -42,7 +42,9 @@ UNITY.msg = function(socket, winner1, winner2) {
 	};
 	socket.emit("reciver", out);
 	socket.emit("pairing_" + element, out);
-	return element
+	return {
+		"outcome": element
+	}
 }
 
 

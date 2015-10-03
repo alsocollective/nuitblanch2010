@@ -36,16 +36,28 @@ var LOAD = {
 			}
 		}
 	},
+	interval_speed: 150,
 	user_type: null,
 	background_itterator: null,
 	bk1: null,
 	bk2: null,
 	count: 0,
+	special: null,
+	loop_times: 0,
 	background_lengths: {
 		'cellular': 80,
 		'water': 60,
 		'wave': 80,
-		'human': 80
+		'human': 80,
+		'birds': 58,
+		'city': 59,
+		'farm': 39,
+		'huricane': 59,
+		'monsoon': 59,
+		'nuke': 69,
+		'oilspill': 79,
+		'trees': 49,
+		'volcanoe': 74
 	},
 	set_new_user_type_and_start: function(type) {
 		console.log("set User tyep for load interval " + type)
@@ -54,7 +66,7 @@ var LOAD = {
 		};
 		LOAD.user_type = type;
 		if (LOAD.background_itterator == null) {
-			LOAD.background_itterator = setInterval(LOAD.background_loop, 150);
+			LOAD.background_itterator = setInterval(LOAD.background_loop, LOAD.interval_speed);
 			LOAD.bk1 = $("#background_container_a");
 			LOAD.bk2 = $("#background_container_b");
 		} else {
@@ -62,16 +74,63 @@ var LOAD = {
 		}
 	},
 	background_loop: function() {
-		if (LOAD.bk1.hasClass("active")) {
-			LOAD.bk2.addClass("active");
-			LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
+		if (!LOAD.special) {
+			if (LOAD.bk1.hasClass("active")) {
+				LOAD.bk2.addClass("active");
+				LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
+			} else {
+				LOAD.bk1.addClass("active")
+				LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
+			}
+			LOAD.count += 1;
+			if (LOAD.count > LOAD.background_lengths[LOAD.user_type] - 1) {
+				LOAD.count = 0;
+			}
 		} else {
-			LOAD.bk1.addClass("active")
-			LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/' + LOAD.user_type + "/" + LOAD.user_type + "_general/" + LOAD.user_type + "_" + LOAD.count + '.jpg")');
+			if (LOAD.bk1.hasClass("active")) {
+				LOAD.bk2.addClass("active");
+				LOAD.bk1.removeClass("active").css("background-image", 'url("assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg")');
+			} else {
+				LOAD.bk1.addClass("active")
+				LOAD.bk2.removeClass("active").css("background-image", 'url("assets/img/backgrounds/out_' + LOAD.special + "/" + LOAD.special + "_" + LOAD.count + '.jpg")');
+			}
+			LOAD.count += 1;
+
+
+
+			// check to see if there are still more loops
+			if (LOAD.count > LOAD.background_lengths[LOAD.special] - 1 && LOAD.loop_times > 0) {
+				LOAD.loop_times -= 1;
+				LOAD.count = 0;
+			} else {
+				// check if it's the last loop
+
+				// exit animation begins
+				if (LOAD.count + 15 > LOAD.background_lengths[LOAD.special]) {
+					$("#wrapper").addClass("fade_out_in");
+					// $("#pairing_success_icon").addClass("fade_out_in");
+				}
+
+				if (LOAD.count > LOAD.background_lengths[LOAD.special] - 1) {
+					LOAD.special = null;
+					GAME.phase3.init(true);
+				}
+			}
+
 		}
-		LOAD.count += 1;
-		if (LOAD.count > LOAD.background_lengths[LOAD.user_type] - 1) {
-			LOAD.count = 0;
+	},
+	set_special_animation: function(outcome_type) {
+		console.log("special animation");
+		LOAD.special = outcome_type;
+		LOAD.count = 0;
+		LOAD.loop_times = 0;
+		$("#wrapper").removeClass("fade_out_in");
+		// $("#pairing_success_icon").removeClass("fade_out_in");
+		$("#pairing_success_icon img").attr("src", "/assets/img/outcomes_icons_centered/" + outcome_type + ".png");
+		if (LOAD.background_itterator == null) {
+			LOAD.background_itterator = setInterval(LOAD.background_loop, LOAD.interval_speed);
+			LOAD.bk1 = $("#background_container_a");
+			LOAD.bk2 = $("#background_container_b");
 		}
 	}
 
