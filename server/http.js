@@ -7,8 +7,8 @@ var http = {
 		http.http = require('http');
 
 		http.app = http.connect().use(function(req, res, next) {
-			// next();
-			// return false;
+			next();
+			return false;
 			if (req.url == "/safdkasdfsfsdasfadsdfasadf.json") {
 				res.writeHead(200, {
 					'Content-Type': 'application/json'

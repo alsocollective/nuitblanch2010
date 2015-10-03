@@ -49,15 +49,18 @@ GAME.phase2 = {
 		event.preventDefault();
 		var userElement = this.href.split("#").pop();
 		Cookies.set('element', userElement);
-
 		$("#background_element_color").addClass(userElement);
 
 		GAME.phase2.next_phase(event);
 		return false;
 	},
-	next_phase: function(event) {
+	next_phase: function(event, userElement) {
 		event.preventDefault();
+		if (!userElement) {
+			var userElement = PAIR.D.element;
+		}
 		$("#background_element_color").addClass("open");
+		LOAD.set_new_user_type_and_start(userElement);
 
 		setTimeout(function() {
 			GAME.phase3.init();
@@ -89,6 +92,7 @@ GAME.phase3 = {
 				$("#user_errors").removeClass();
 			}, 3000);
 		}
+		LOAD.set_new_user_type_and_start(PAIR.D.element);
 		APP.pr(error); //for debugging
 		//$(document.body).removeClass().addClass("phase3 " + PAIR.D.element + error);
 		$(document.body).removeClass().addClass("phase3 " + PAIR.D.element);
