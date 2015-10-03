@@ -1,6 +1,6 @@
 var APP = {
-	fullscreen: true,
-	IP: "192.168.0.101:8000",
+	fullscreen: false,
+	IP: "192.168.2.1:80",
 	//IP: "10.0.1.7:8000",
 	init: function() {
 		BROWSER.init(false);

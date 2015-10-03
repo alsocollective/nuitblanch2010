@@ -42,8 +42,23 @@
     }
 }
 
+@include keyframes(fade_out_in_no_delay) {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .fade_out_in{
-    @include animation('fade_out_in 8s');
+    @include animation('fade_out_in 6s');
+}
+.fade_out_in_no_delay{
+    @include animation('fade_out_in_no_delay 5s');
 }
 
 .fadeIn {

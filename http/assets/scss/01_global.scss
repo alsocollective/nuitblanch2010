@@ -146,6 +146,9 @@ button {
     /* font-family: inherit; */
     /* font-weight: inherit; */
     box-shadow: 0 0 55px #fff;
+    &:focus{
+    	outline:inherit;
+    }
 }
 
 .water,.human,.cellular,.wave {
@@ -305,6 +308,5 @@ button {
 img[src=""]{
 	display: none;
 }
-
 
 
