@@ -18,7 +18,7 @@ REC.start = function() {
 	REC.raw = null;
 	console.log("start recording");
 	window.addEventListener('deviceorientation', REC.phone_moves_updater, true);
-	REC.beat_holder = setInterval(REC.beat, 16);
+	REC.beat_holder = setInterval(REC.beat, 50);
 };
 
 REC.phone_moves_updater = function(event) {

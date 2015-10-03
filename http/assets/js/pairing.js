@@ -87,7 +87,6 @@ PAIR.OUT.joining_queue = function(event) {
 	console.log("joining queue");
 	APP.pr("tapped!");
 	PAIR.socket.emit("join queue", "PAIR.D")
-	REC.start();
 	GAME.phase4.init();
 	if (APP.fullscreen && screenfull.enabled) {
 		screenfull.request();
@@ -97,8 +96,10 @@ PAIR.OUT.joining_queue = function(event) {
 // we geing the in tap que
 PAIR.IN.joined_queue = function(data) {
 	console.log("joined queue, wait " + data + " before exiting");
+	console.log(data * 2);
 	PAIR.D.wait_time = data;
 	window.clearTimeout(PAIR.WAIT.in_tap_queue_holder);
+	REC.start();
 	PAIR.WAIT.in_tap_queue_holder = window.setTimeout(PAIR.WAIT.in_tap_queue, data * 2)
 };
 

@@ -2,6 +2,7 @@ var LOAD = {
 	images: [],
 
 	init: function(user_type) {
+		return false
 		LOAD.image_array_generator([{
 			"directory": "/assets/img/backgrounds/cellular/cellular_general/",
 			"image_num": 81,
@@ -60,6 +61,7 @@ var LOAD = {
 		'volcanoe': 74
 	},
 	set_new_user_type_and_start: function(type) {
+		//return false
 		console.log("set User tyep for load interval " + type)
 		if (LOAD.user_type == type) {
 			return false;
